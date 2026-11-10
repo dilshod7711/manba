@@ -3,6 +3,7 @@
 //   BOT_TOKEN  — @BotFather bergan token (majburiy)
 //   CHAT_ID    — leadlar boradigan chat; berilmasa quyidagi chatga boradi
 
+const DEFAULT_BOT_TOKEN = '9242954854:AAFoN-HNfmZ_4Py4KMADp6EvtkotbOuhikc';
 const DEFAULT_CHAT_ID = '7150930064'; // @aktamjon_murodullayev, botga /start bosgan
 const NAME_MAX = 60;
 const PHONE_RE = /^\+998\d{9}$/;
@@ -27,7 +28,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ ok: false });
   }
 
-  const BOT_TOKEN = process.env.BOT_TOKEN;
+  const BOT_TOKEN = process.env.BOT_TOKEN || DEFAULT_BOT_TOKEN;
   const CHAT_ID = process.env.CHAT_ID || DEFAULT_CHAT_ID;
   if (!BOT_TOKEN) {
     return res.status(500).json({ ok: false, error: 'not_configured' });
