@@ -4,6 +4,7 @@ import { Icon, Sprite } from './components/Icons.jsx';
 import Home from './components/Home.jsx';
 import Anketa from './components/Anketa.jsx';
 import Tolov from './components/Tolov.jsx';
+import { soundEnter } from './sounds.js';
 
 // Lead kept for this browser tab only
 function loadLead() {

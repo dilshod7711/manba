@@ -1,7 +1,8 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { CONFIG } from '../config.js';
 import { formatPhone, useScrolled } from '../hooks.js';
 import { Icon } from './Icons.jsx';
+import { soundBack, soundEnter, soundSuccess, soundTap } from '../sounds.js';
 
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const NAME_ERROR = 'Ismingizni yozing.';
@@ -48,6 +49,9 @@ export default function Anketa({ go, onLead }) {
   const phoneRef = useRef(null);
   const scrolled = useScrolled();
 
+  // Sahifaga kirganda ovoz
+  useEffect(() => { soundEnter(); }, []);
+
   // A message goes away as soon as the field it was about is fixed
   function onName(e) {
     setName(e.target.value);
@@ -76,12 +80,17 @@ export default function Anketa({ go, onLead }) {
     if (!phoneOk) { setError(PHONE_ERROR); phoneRef.current.focus(); return; }
     setError('');
 
+    // "Davom etish" bosilganda ovoz
+    soundTap();
+
     const value = { name: clean, phone: '+998' + digits };
     setBusy(true);
     // A failed lead must not stop the sale: the admin still gets name and phone with the screenshot
     await sendLead(value);
     onLead(value);
     setDone(true);
+    // "Qabul qilindi" chiqganda muvaffaqiyat ovozi
+    soundSuccess();
     await wait(1100);
     go('tolov');
   }
@@ -90,7 +99,7 @@ export default function Anketa({ go, onLead }) {
     <>
       <header className={'nav' + (scrolled ? ' scrolled' : '')}>
         <div className="wrap bar-grid">
-          <button className="back" type="button" onClick={() => go('home')}><Icon name="left" />Orqaga</button>
+          <button className="back" type="button" onClick={() => { soundBack(); go('home'); }}><Icon name="left" />Orqaga</button>
           <span />
           <span />
         </div>
