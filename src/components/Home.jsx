@@ -13,7 +13,7 @@ const FIT = [
 
 const INCLUDED = [
   ['7 kunlik kurator nazorati', 'Marafon boshidan oxirigacha.'],
-  ['Zarina opadan onlayn jonli efir', 'Dietologning o’zi o’tkazadi.'],
+  ['Zarina dietologdan onlayn jonli efir', 'Dietologning o’zi o’tkazadi.'],
   ['7 kunlik to’g’ri ovqatlanish tizimi', 'Har kuni nima va qancha yeyish kerakligini aniq bilib, shu tizim bilan ovqatlanasiz.'],
   ['G’oliblar uchun 3 ta katta sovg’a', 'Marafonda eng yaxshi natija ko’rsatgan ishtirokchilar 3 ta katta sovg’a bilan taqdirlanadi.']
 ];
@@ -23,7 +23,7 @@ const STEPS = [
   ['Hozir', 'Joyingizni band qilasiz', 'Anketani to’ldirasiz, to’lov qilasiz va skrinshotni adminga yuborasiz.'],
   ['26-noyabr', 'Marafon boshlanadi', 'Shu kundan boshlab kurator nazorati ostidasiz.'],
   ['7 kun davomida', 'To’g’ri ovqatlanib ozasiz', 'Marafon mavzusi bitta: ozishga to’g’ri ovqatlanish orqali erishish.'],
-  ['Marafon ichida', 'Zarina opa bilan jonli efir', 'Zarina opa onlayn efirga chiqadi, dietologni to’g’ridan-to’g’ri eshitasiz.']
+  ['Marafon ichida', 'Zarina dietolog bilan jonli efir', 'Zarina dietolog onlayn efirga chiqadi, dietologni to’g’ridan-to’g’ri eshitasiz.']
 ];
 
 const FAQ = [
@@ -66,7 +66,7 @@ function Video() {
           </button>
         )}
       </div>
-      <p className="video-note"><Icon name="yt" />Zarina opa: osh va somsani tashlamasdan qanday ozish mumkin</p>
+      <p className="video-note"><Icon name="yt" />Zarina dietolog: osh va somsani tashlamasdan qanday ozish mumkin</p>
     </div>
   );
 }
@@ -95,7 +95,7 @@ export default function Home({ link }) {
           <div className="hero-text">
             <Countdown label="Boshlanishiga qoldi" labelClass="count-label" />
             <h1 className="large">To’g’ri ovqatlanib ozishni <em>7 kunda</em> boshlang</h1>
-            <p className="lead">Dietolog <b>Zarina Orzimurodovna</b> bilan marafon. 7 kun kurator nazoratida bo’lasiz, Zarina opa esa onlayn jonli efir o’tkazadi.</p>
+            <p className="lead">Dietolog <b>Zarina Orzimurodovna</b> bilan marafon. 7 kun kurator nazoratida bo’lasiz, Zarina dietolog esa onlayn jonli efir o’tkazadi.</p>
           </div>
 
           <Video />
@@ -160,7 +160,7 @@ export default function Home({ link }) {
             <div className="about-t">
               <h3>Zarina Orzimurodovna</h3>
               <p className="role">Dietologiyadan ustoz</p>
-              <p className="text">Zarina opa 4 yildan beri dietologiya bilan shug’ullanadi va shu vaqt ichida 1000 dan ziyod o’quvchi chiqargan.</p>
+              <p className="text">Zarina dietolog 4 yildan beri dietologiya bilan shug’ullanadi va shu vaqt ichida 1000 dan ziyod o’quvchi chiqargan.</p>
             </div>
           </div>
         </section>
